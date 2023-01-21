@@ -33,13 +33,16 @@ export default function NotesPage() {
         </Form>
       </header>
 
-      <main className="flex h-full bg-white">
-        <div className="h-full w-80 border-r bg-gray-50">
+      <main>
+        <div>
           <Link to="new" className="block p-4 text-xl text-blue-500">
             + New Note
           </Link>
 
           <hr />
+          <div className="flex-1 p-6">
+            <Outlet />
+          </div>
 
           {data.noteListItems.length === 0 ? (
             <p className="p-4">No notes yet</p>
@@ -53,16 +56,12 @@ export default function NotesPage() {
                     }
                     to={note.id}
                   >
-                    📝 {note.title}
+                    {note.title}
                   </NavLink>
                 </li>
               ))}
             </ol>
           )}
-        </div>
-
-        <div className="flex-1 p-6">
-          <Outlet />
         </div>
       </main>
     </div>
