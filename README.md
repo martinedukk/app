@@ -35,7 +35,7 @@ Click this button to create a [Gitpod](https://gitpod.io) workspace with the pro
 ## Development
 
 - This step only applies if you've opted out of having the CLI install dependencies for you:
-  
+
   ```sh
   npx remix init
   ```
@@ -89,6 +89,7 @@ Prior to your first deployment, you'll need to do a few things:
   fly apps create indie-stack-template
   fly apps create indie-stack-template-staging
   ```
+
   > **Note:** Make sure this name matches the `app` set in your `fly.toml` file. Otherwise, you will not be able to deploy.
 
   - Initialize Git.
@@ -126,6 +127,8 @@ Now that everything is set up you can commit and push your changes to your repo.
 ### Connecting to your database
 
 The sqlite database lives at `/data/sqlite.db` in your deployed application. You can connect to the live database by running `fly ssh console -C database-cli`.
+
+If you want to run the app locally with database functionality you have to run `npx prisma generate` and `npx prisma migrate deploy`
 
 ### Getting Help with Deployment
 
